@@ -1,0 +1,10 @@
+on:
+  push:
+    path:
+      - 'src/*'
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggerd for src"
