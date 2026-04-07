@@ -1,0 +1,12 @@
+on:
+  pull_request:
+    branch:
+      - main
+jobs:
+  build:
+    runs-on:
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: just_a_message
+        run: echo "keep rocking" 
