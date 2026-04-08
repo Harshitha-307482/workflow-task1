@@ -5,7 +5,9 @@ on:
       - '.github/workflows/task10.yaml'
  
 jobs:
-  secret:
+  secrets:
     runs-on: ubuntu-latest
+    env:
+      APP: Mypassword
     steps:
       - run: echo "${{ secrets.API_KEY }}"
