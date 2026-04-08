@@ -1,0 +1,13 @@
+name: 09-Env
+on:
+  push:
+    paths:
+      - '.github/workflows/task9.yaml'
+ 
+jobs:
+  env:
+    runs-on: ubuntu-latest
+    env:
+      APP: demo
+    steps:
+      - run: echo $APP
