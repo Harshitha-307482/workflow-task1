@@ -1,14 +1,22 @@
-on:[push]
+name: Node CI
+
+on: [push]
 
 jobs:
   node:
     runs-on: ubuntu-latest
+
     steps:
-      - name: "checkout"
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: "setup of node"
+
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-        - run: npm install
-        - run: npm test
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
