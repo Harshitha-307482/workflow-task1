@@ -5,14 +5,23 @@ on:
     paths:
       - '.github/workflows/task8.yaml'   # only triggers when files in task8/ folder change
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Build"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Test"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: pytest
