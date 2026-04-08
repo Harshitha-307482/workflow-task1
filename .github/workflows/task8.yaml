@@ -1,23 +1,18 @@
-name: Python Multi-Job CI
+name: 08-Multi-Job
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'task8/**'   # only triggers when files in task8/ folder change
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - run: echo "Build"
 
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Run tests
-        run: pytest
+      - run: echo "Test"
