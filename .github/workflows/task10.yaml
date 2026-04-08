@@ -1,0 +1,11 @@
+name: 10-Secrets
+on:
+  push:
+    paths:
+      - '.github/workflows/task10.yaml'
+ 
+jobs:
+  secret:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ secrets.API_KEY }}"
