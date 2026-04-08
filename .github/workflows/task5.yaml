@@ -1,7 +1,8 @@
 on:[push]
+
 jobs:
   node:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: "checkout"
         uses: actions/checkout@v4
