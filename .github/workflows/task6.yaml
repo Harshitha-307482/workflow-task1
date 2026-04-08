@@ -1,0 +1,13 @@
+on:[push]
+jobs:
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: stepup
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+        -run: mvn clean package
