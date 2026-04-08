@@ -3,7 +3,7 @@ name: 08-Multi-Job
 on:
   push:
     paths:
-      - 'task8/**'   # only triggers when files in task8/ folder change
+      - '.github/workflows/task8.yaml'   # only triggers when files in task8/ folder change
 
 jobs:
   build:
