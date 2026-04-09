@@ -2,7 +2,7 @@ on:
   push:
     paths:
       - '.github/workflows/task12.yaml'
-      - ' package.json'
+      - 'package-lock.json'
       - 'package.json'
 
 jobs:
@@ -16,9 +16,9 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.npm
-        key: npm-${{ runner.os }}-${{ hashFiles(package.json) }}
-        restore-keys:
+        key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+        restore-keys: |
           npm-${{ runner.os }}
       
     - name: install dependencies 
-      run: npm install
+      run: npm ci
