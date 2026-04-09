@@ -21,4 +21,4 @@ jobs:
           npm-${{ runner.os }}
       
     - name: install dependencies 
-      run: npm ci
+      run: npm install
